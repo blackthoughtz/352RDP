@@ -8,8 +8,19 @@ import sys
 # define the UDP ports all messages are sent
 # and received from
 
-def init(UDPportTx,UDPportRx):   # initialize your UDP socket here 
-    pass 
+def init(UDPportTx,UDPportRx):   # initialize your UDP socket here
+    global Txport                 # transmitting port
+    global Rxport
+
+    if UDPportRx == '':
+        Rxport = 27182
+    else:
+        Rxport = UDPportRx
+    if UDPportTx == '':
+        Txport = 27182
+    else:
+        Txport = UDPportTx
+
     
 class socket:
     
